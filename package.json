@@ -1,0 +1,27 @@
+{
+  "name": "cse-341",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danskibum/cse-341-spring-23.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "bugs": {
+    "url": "https://github.com/Danskibum/cse-341-spring-23/issues"
+  },
+  "homepage": "https://github.com/Danskibum/cse-341-spring-23#readme"
+}
