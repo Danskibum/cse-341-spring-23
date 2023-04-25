@@ -13,9 +13,14 @@ const abigailRoute = (req,res) => {
 const nathanRoute = (req,res) => {
     res.send("Nathan Gerdes");
   };
+const brandonRoute = (req,res) => {
+    res.send("Brandon Gerdes");
+  };
+
   module.exports ={
     kristalRoute,
     gretchenRoute,
     abigailRoute,
     nathanRoute,
+    brandonRoute,
   };
