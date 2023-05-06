@@ -1,0 +1,23 @@
+{
+    "contact": {
+        "firstName": "Kristal",
+        "lastName": "Gerdes",
+        "email": "kristalm1975@yahoo.com",
+        "favoriteColor": "Green",
+        "birthday": "08/30/75"
+    },
+    "contact2": {
+        "firstName": "Gretchen",
+        "lastName": "Gerdes",
+        "email": "gretchenL2006@yahoo.com",
+        "favoriteColor": "Purple",
+        "birthday": "06/7/06"
+    },
+    "contact3": {
+        "firstName": "Abigail",
+        "lastName": "Gerdes",
+        "email": "abigailn2007@yahoo.com",
+        "favoriteColor": "Blue",
+        "birthday": "11/09/07"
+    }
+}

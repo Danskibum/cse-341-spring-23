@@ -1,26 +1,29 @@
-const kristalRoute = (req,res) => {
-    res.send("Kristal Gerdes");
-  };
+const mongodb = require('../db/connect');
+const ObjectId = require('mongodb').ObjectId;
 
-const gretchenRoute = (req,res) => {
-    res.send("Gretchen Gerdes");
-  };
-  
-const abigailRoute = (req,res) => {
-    res.send("Abigail Gerdes");
-  };
+const getAll = async (req, res, next) => {
+  const result = await mongodb.getDb().db().collection('contacts').find();
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists);
+  });
+};
 
-const nathanRoute = (req,res) => {
-    res.send("Nathan Gerdes");
-  };
-const brandonRoute = (req,res) => {
-    res.send("Brandon Gerdes");
-  };
+const getSingle = async (req, res, next) => {
+  const userId = new ObjectId(req.params.id);
+  const result = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .find({ _id: userId });
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  });
+};
 
-  module.exports ={
-    kristalRoute,
-    gretchenRoute,
-    abigailRoute,
-    nathanRoute,
-    brandonRoute,
-  };
+module.exports = { getAll, getSingle };
+
+
+
+
