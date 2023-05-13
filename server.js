@@ -5,6 +5,10 @@ const mongodb = require('./db/connect');
 const port = process.env.PORT || 8080;
 const app = express();
 
+const swaggerAutogen = require('swagger-autogen') ();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
@@ -12,6 +16,9 @@ app
     next();
   })
   .use('/', require('./routes'));
+app.listen(port, () => {
+  console.log('server is running on port ${port}.');
+});  
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
