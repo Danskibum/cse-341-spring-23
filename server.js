@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
 const swaggerAutogen = require('swagger-autogen') ();
@@ -16,15 +16,15 @@ app
     next();
   })
   .use('/', require('./routes'));
-app.listen(port, () => {
-  console.log('server is running on port ${port}.');
+app.listen(PORT, () => {
+  console.log('server is running on port ${PORT}.');
 });  
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
     console.log(err);
   } else {
-    app.listen(port);
-    console.log(`Connected to DB and listening on ${port}`);
+    app.listen(PORT);
+    console.log(`Connected to DB and listening on ${PORT}`);
   }
 });
